@@ -7,7 +7,7 @@ bcrypt = Bcrypt()  # Cria uma instância do Bcrypt para criptografia de senhas
 app = Flask(__name__) # Importa a biblioteca Flask para criar um aplicativo web simples
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  # Configura o URI do banco de dados SQLite
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Desativa o rastreamento de modificações do SQLAlchemy para economizar recursos
-app.config['SQALALCHEMY_ECHO'] = True  # Ativa o log de consultas SQL para depuração
+app.config['SQLALCHEMY_ECHO'] = True  # Ativa o log de consultas SQL para depuração
 db = SQLAlchemy(app)  # Cria uma instância do SQLAlchemy com o aplicativo
 
 class User(db.Model):
