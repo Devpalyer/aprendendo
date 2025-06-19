@@ -62,7 +62,8 @@ def register():
         )
         db.session.add(new_user)  # Adiciona o novo usuário à sessão do banco de dados
         db.session.commit()  # Salva as alterações no banco de dados
-        return render_template("register.html")
+        return redirect("/login")
+    return render_template("register.html")  # Renderiza o template 'register.html' para registro de usuários
     
 @app.route("/login", methods=["GET", "POST"])
 def login():
