@@ -77,6 +77,8 @@ def login():
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)#!/usr/bin/env python3
 # Importa a biblioteca Flask para criar um aplicativo web simples  
 
