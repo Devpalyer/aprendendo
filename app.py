@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request # Importa a biblioteca Flask para criar um aplicativo web simples
+from flask import Flask, redirect, render_template, request # Importa a biblioteca Flask para criar um aplicativo web simples
 from flask_sqlalchemy import SQLAlchemy     # Importa a biblioteca Flask-SQLAlchemy para interagir com o banco de dados
 from flask_bcrypt import Bcrypt  # Importa a biblioteca Flask-Bcrypt para criptografia de senhas
 bcrypt = Bcrypt()  # Cria uma instância do Bcrypt para criptografia de senhas
