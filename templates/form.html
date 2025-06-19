@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Formulário de Contato</h2>
+    <form method="POST" action="{{ url_for('handle_form') }}">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <button type="submit">Enviar</button>
+    </form>
+{% endblock %}
