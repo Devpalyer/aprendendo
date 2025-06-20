@@ -1,7 +1,18 @@
 from flask import Flask, redirect, render_template, request # Importa a biblioteca Flask para criar um aplicativo web simples
 from flask_sqlalchemy import SQLAlchemy     # Importa a biblioteca Flask-SQLAlchemy para interagir com o banco de dados
 from flask_bcrypt import Bcrypt  # Importa a biblioteca Flask-Bcrypt para criptografia de senhas
+from flask import Resource, Api  # Importa a biblioteca Flask-RESTful para criar APIs RESTful 
 bcrypt = Bcrypt()  # Cria uma instância do Bcrypt para criptografia de senhas
+
+api = Api()  # Cria uma instância da API RESTful
+
+class UserAPI(Resource):
+    def get(self, user_id):
+        user - User.query.get_or_404(user_id)  # Busca o usuário pelo ID, retornando 404 se não encontrado
+        return {'username' : user.username}
+    
+api.add_resource(UserAPI, '/api/user/<int:user_id>')  # Adiciona o recurso UserAPI à API RESTful com a rota '/api/user/<user_id>'
+    
 
 
 app = Flask(__name__) # Importa a biblioteca Flask para criar um aplicativo web simples
